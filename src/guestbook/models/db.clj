@@ -31,3 +31,10 @@
      :guestbook
      [:name :message :timestamp]
      [name message (new java.util.Date)])))
+
+(defn read-names []
+  (sql/with-connection
+    db
+    (sql/with-query-results res
+      ["SELECT name from guestbook ORDER BY name DESC"]
+      (doall res))))
