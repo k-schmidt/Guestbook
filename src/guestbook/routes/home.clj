@@ -2,7 +2,8 @@
   (:require [compojure.core :refer :all]
             [guestbook.views.layout :as layout]
             [hiccup.form :refer :all]
-            [guestbook.models.db :as db]))
+            [guestbook.models.db :as db]
+            [noir.session :as session]))
 
 (defn format-time [timestamp]
   (-> "yyyy-MM-dd"
